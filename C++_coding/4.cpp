@@ -23,20 +23,20 @@ int main() {
 
 int fourthq(const string& sentence)
 {
-    int wordCount = 0;
-    bool inWord = false;
+    int Count = 0;
+    bool Word = 0;
 
     for (char ch : sentence) {
-        if (ch == ' ' || ch == '\t' || ch == '\n') {
-            if (inWord) {
-                wordCount++;
-                inWord = false;
+        if (ch == ' ' || ch == '\n') {
+            if (Word) {
+                Count++;
+                Word = 0;
             }
         } else
-            inWord = true;
+            Word = 1;
     }
-    if (inWord)
-        wordCount++;
+    if (Word)
+        Count++;
 
-    return (wordCount);
+    return (Count);
 }
