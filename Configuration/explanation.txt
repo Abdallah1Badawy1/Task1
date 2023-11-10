@@ -1,27 +1,27 @@
-Step 0 - Create an account on GitHub [if you do not have one already]
+## Step 0 - Create an account on GitHub [if you do not have one already]
 
 
-Step 1 - Create a Personal Access Token on Github
+## Step 1 - Create a Personal Access Token on Github
 To have access to your repositories and authenticate yourself, you need to create a Personal Access Token on Github.
 
 
-Step 2 - Update your profile on the Intranet
+## Step 2 - Update your profile on the Intranet
 
 
-Step 3 - Create your first repository
+## Step 3 - Create your first repository
 Using the graphic interface on the github website, create your first repository.
 
 
-Step 5 - Clone your repository
+## Step 5 - Clone your repository
 git clone https://{YOUR_PERSONAL_TOKEN}@github.com/{YOUR_USERNAME}/Reponame.git
 Replace {YOUR_PERSONAL_TOKEN} with your token from step 1
 Replace {YOUR_USERNAME} with your username from step 0 and 1
 
-Step 6 - Create the README.md and push the modifications
+##Step 6 - Create the README.md and push the modifications
 
 
 
-Step 7 - Update your git identity
+## Step 7 - Update your git identity
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
