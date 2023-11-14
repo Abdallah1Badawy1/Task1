@@ -25,18 +25,12 @@ int fourthq(const string& sentence)
 {
     int Count = 0;
     bool Word = 0;
-
-    for (char ch : sentence) {
-        if (ch == ' ' || ch == '\n') {
-            if (Word) {
-                Count++;
-                Word = 0;
-            }
-        } else
-            Word = 1;
+	for (char ch : sentence) {
+        word = (ch == ' ' || ch == '\n') ? false : true;
+        count += (word && !(ch == ' ' || ch == '\n')) ? 0 : (word ? 1 : 0);
     }
-    if (Word)
-        Count++;
 
-    return (Count);
+    count += word ? 1 : 0;
+    return count;
+
 }

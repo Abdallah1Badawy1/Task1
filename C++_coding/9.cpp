@@ -21,52 +21,35 @@ int main(void)
  * 
  * @param initialBalance The initial balance in the account.
  */
-
 void ninthq(int initialBalance) {
     int balance = initialBalance;
+    int choice;
 
-    while (1)
-	{
-        cout << "ATM Menu:" << endl;
-        cout << "1. Check Balance" << endl;
-        cout << "2. Withdraw Money" << endl;
-        cout << "3. Deposit Funds" << endl;
-        cout << "4. Exit" << endl;
-
-        int choice;
-        cout << "Enter your choice : ";
+    do {
+        cout << "ATM Menu:\n"
+             << "1. Check Balance\n"
+             << "2. Withdraw Money\n"
+             << "3. Deposit Funds\n"
+             << "4. Exit\n"
+             << "Enter your choice: ";
         cin >> choice;
 
-        if (choice == 1)
-            cout << "Your Balance: $" << balance << endl;
-        else if (choice == 2)
-	{
-            int withdrawalAmount;
-            cout << "Enter the amount to withdraw: $";
-            cin >> withdrawalAmount;
+        (choice == 1) ? cout << "Your Balance: $" << balance << endl
+                      : (choice == 2) ? (
+                            (balance -= (int)withdrawalAmount > balance ? (cout << "Insufficient funds!\n", 0)
+                                                                        : (cout << "Withdrawal successful. Your new balance: $" << balance << endl, 0))
+                        )
+                      : (choice == 3) ? (
+                            (balance += (int)depositAmount < 0 ? (cout << "Invalid deposit amount!\n", 0)
+                                                                 : (cout << "Deposit successful. Your new balance: $" << balance << endl, 0))
+                        )
+                      : ((choice == 4) ? cout << "Exiting ATM.\n" : cout << "Invalid choice. Please enter a number between 1 and 4.\n");
 
-            if (withdrawalAmount > balance)
-                cout << "Insufficient funds!" << endl;
-            else {
-                balance -= withdrawalAmount;
-                cout << "Withdrawal successful. Your new balance: " << balance << endl;
-            }
-        } else if (choice == 3)
-		{
-            int depositAmount;
-            cout << "Enter the amount to deposit: ";
-            cin >> depositAmount;
+    } while (choice != 4);
+}
 
-            if (depositAmount < 0)
-                cout << "Invalid deposit amount!" << endl;
-            else {
-                balance += depositAmount;
-                cout << "Deposit successful. Your new balance: $" << balance << endl;
-            }
-        } else if (choice == 4) {
-            cout << "Exiting ATM." << endl;
-            break;
-        } else
-            cout << "Invalid . Please enter a num between 1 and 4." << endl;
-    }
+int main() {
+    int initialBalance = 1000;
+    ninthq(initialBalance);
+    return 0;
 }

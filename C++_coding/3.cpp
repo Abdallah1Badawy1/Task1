@@ -3,7 +3,7 @@ int main(void)
 {
     int arrSize = 5;
     int arr[arrSize];
-    cout << "Enter " << arrSize << " num for the array : " << endl;
+    cout << "Enter  num for the array : " << endl;
     for (int i = 0; i < arrSize; ++i)
        	 cin >> arr[i];
 
